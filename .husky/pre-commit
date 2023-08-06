@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running code style checks..."
+vendor/bin/pint --test
+echo "Code style checks finished"
+echo "Running Static Code Analysis (PHPStan)..."
+vendor/bin/phpstan analyse
+echo "Static Code Analysis finished"
+echo "Running tests..."
+#vendor/bin/sail test --parallel --processes=3 --stop-on-failure
+echo "Tests finished"
