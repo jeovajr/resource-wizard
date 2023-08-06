@@ -1,0 +1,30 @@
+{
+  "name": "jeovajr/resource-wizard",
+  "description": "Helper to create API resources in Laravel",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "api",
+    "resource"
+  ],
+  "authors": [
+    {
+      "name": "Jeova",
+      "email": "jeova.goncalves1@gmail.com",
+      "homepage": "https://github.com/jeovajr"
+    }
+  ],
+  "homepage": "https://github.com/jeovajr/resource-wizard",
+  "support": {
+    "email": "jeova.goncalves1@gmail.com",
+    "issues": "https://github.com/jeovajr/resource-wizard/issues",
+    "source": "https://github.com/jeovajr/resource-wizard"
+  },
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+
+  }
+}
