@@ -22,9 +22,103 @@
     "source": "https://github.com/jeovajr/resource-wizard"
   },
   "require": {
-    "php": "^8.2"
+    "php": "^8.2",
+    "ext-json": "*",
+    "illuminate/contracts": "^10",
+    "illuminate/http": "^10",
+    "illuminate/support": "^10",
+    "psr-discovery/all": "^1",
+    "psr/cache": "^3"
   },
   "require-dev": {
-
+    "friendsofphp/php-cs-fixer": "^3.22",
+    "laravel/pint": "^1.10",
+    "mockery/mockery": "^1.6",
+    "nunomaduro/larastan": "^2.6",
+    "orchestra/testbench": "^8.5",
+    "pestphp/pest": "^2.12",
+    "pestphp/pest-plugin-laravel": "^2.1",
+    "phpstan/phpstan": "^1.10",
+    "phpstan/phpstan-strict-rules": "^1.5",
+    "phpunit/phpunit": "^10.3",
+    "psalm/plugin-laravel": "^2.8",
+    "psr-mock/http": "^1.0",
+    "rector/rector": "^0.17.10",
+    "spatie/laravel-ignition": "^2.2",
+    "spatie/laravel-ray": "^1.32",
+    "squizlabs/php_codesniffer": "^3.7",
+    "symfony/cache": "^6.3",
+    "vimeo/psalm": "^5.14",
+    "wikimedia/composer-merge-plugin": "^2.1"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "ResourceWizard\\": [
+        "src/"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ResourceWizard\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "wikimedia/composer-merge-plugin": true,
+      "php-http/discovery": false
+    },
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "process-timeout": 0,
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "aliases": {
+        "Auth0": "ResourceWizard\\Facade\\ResourceWizard"
+      },
+      "providers": [
+        "ResourceWizard\\ServiceProvider"
+      ]
+    },
+    "merge-plugin": {
+      "ignore-duplicates": false,
+      "include": [
+        "composer.local.json"
+      ],
+      "merge-dev": true,
+      "merge-extra": false,
+      "merge-extra-deep": false,
+      "merge-scripts": false,
+      "recurse": true,
+      "replace": true
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php vendor/bin/testbench package:discover --ansi"
+    ],
+    "pest:coverage": "@php vendor/bin/pest --coverage --parallel --no-progress",
+    "pest:debug": "@php vendor/bin/pest --fail-on-risky --stop-on-defect",
+    "pest:profile": "@php vendor/bin/pest --profile",
+    "pest": "@php vendor/bin/pest --order-by random --fail-on-risky --stop-on-defect --coverage --parallel --min=95",
+    "phpcs:fix": "@php vendor/bin/php-cs-fixer fix",
+    "phpcs": "@php vendor/bin/php-cs-fixer fix --dry-run --diff",
+    "phpstan": "@php vendor/bin/phpstan analyze",
+    "psalm:fix": "@php vendor/bin/psalter --issues=all",
+    "psalm": "@php vendor/bin/psalm",
+    "rector:fix": "@php vendor/bin/rector process src",
+    "rector": "@php vendor/bin/rector process src --dry-run",
+    "test": [
+      "@pest",
+      "@phpstan",
+      "@psalm",
+      "@rector",
+      "@phpcs"
+    ]
   }
 }

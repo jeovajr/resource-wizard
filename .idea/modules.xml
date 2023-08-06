@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/resorce-wizard.iml" filepath="$PROJECT_DIR$/.idea/resorce-wizard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../resource-wizard/.idea/resource-wizard.iml" filepath="$PROJECT_DIR$/../resource-wizard/.idea/resource-wizard.iml" />
     </modules>
   </component>
 </project>
