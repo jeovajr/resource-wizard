@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="ResourceWizard\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="ResourceWizard\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Unit" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />
@@ -168,14 +169,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/zbateson/mail-mime-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zbateson/mb-wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zbateson/stream-decorators" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/archtechx/enums" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dragon-code/contracts" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dragon-code/pretty-array" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dragon-code/support" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-lang/attributes" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-lang/http-statuses" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-lang/lang" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-lang/publisher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/pint" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/ignition" />
