@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+namespace ResourceWizard\Events\Resources\DummyUP;
+
+use ResourceWizard\Events\EventLock;
+use App\Models\DummyUS;
+
+/**
+ * EventLock general class.
+ * Broadcast events via broadcast driver.
+ *
+ * @author        Jeova Goncalves <jeova.goncalves1@gmail.com>
+ * @copyright (c) 2023, Jeova Goncalves.
+ */
+class DummyUSLock extends EventLock {
+
+
+    /**
+     * Create a new event instance.
+     *
+     * @param DummyUS $DummyLS
+     * @param string  $account The event account
+     *
+     * @return void
+     */
+    public function __construct(DummyUS $DummyLS, string $account) {
+        parent::__construct("DummyLP", $DummyLS, $account);
+    }
+
+}

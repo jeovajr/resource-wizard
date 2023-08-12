@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+namespace ResourceWizard\Events\Resources\DummyUP;
+
+use ResourceWizard\Events\EventRead;
+use App\Models\DummyUS;
+
+/**
+ * EventRead general class.
+ * Broadcast events via broadcast driver.
+ *
+ * @author        Jeova Goncalves <jeova.goncalves1@gmail.com>
+ * @copyright (c) 2023, Jeova Goncalves.
+ */
+class DummyUSRead extends EventRead {
+
+    /**
+     * Create a new event instance.
+     *
+     * @param DummyUS                             $DummyLS
+     * @param string                              $account   The event account
+     * @param array{id: int|string, name: string} $requester The user that requested the resource
+     *
+     * @return void
+     */
+    public function __construct(DummyUS $DummyLS, string $account, array $requester) {
+        parent::__construct("DummyLP", $DummyLS, $account, $requester);
+    }
+
+}
