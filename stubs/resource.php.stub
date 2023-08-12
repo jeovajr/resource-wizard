@@ -1,0 +1,75 @@
+<?php
+
+return [
+    'singular' => 'DummyTitleS',
+    'plural' => 'DummyTitleP',
+    'slug' => 'DummySlugP',
+    'columns' => [
+        [
+            'db_name' => 'sample_column',
+            'db_type' => 'string',
+            'db_length' => 255,
+            'db_nullable' => false,
+            'db_default' => null,
+            'db_unique' => false,
+            'db_index' => false,
+            'db_unsigned' => false,
+            'db_comment' => 'Sample Column',
+            'model_hidden' => false,
+            'model_editable' => true,
+            'model_searchable' => true,
+            'model_filterable' => true,
+            'model_sortable' => true,
+            'request_validation' => 'required|string|max:255',
+            'resource_name' => __('Sample Column'),
+        ]
+    ],
+    'primary_key' => 'id',
+    'default_order_by' => 'id',
+    'default_order_direction' => 'asc',
+    'cache' => [
+        'item' => [
+            'enabled' => true,
+            'ttl' => 3600,
+        ],
+        'collection' => [
+            'enabled' => true,
+            'ttl' => 3600,
+        ],
+    ],
+    'exports' => [
+        'enabled' => true,
+        'formats' => [
+            'txt' => true,
+            'csv' => true,
+            'xlsx' => true,
+            'pdf' => true,
+            'json' => true,
+            'xml' => true,
+        ],
+    ],
+    'events' => [
+        'enabled' => true,
+        'browse' => [
+            'enabled' => true,
+        ],
+        'read' => [
+            'enabled' => true,
+        ],
+        'edit' => [
+            'enabled' => true,
+        ],
+        'add' => [
+            'enabled' => true,
+        ],
+        'delete' => [
+            'enabled' => true,
+        ],
+        'lock' => [
+            'enabled' => true,
+        ],
+        'unlock' => [
+            'enabled' => true,
+        ],
+    ],
+];

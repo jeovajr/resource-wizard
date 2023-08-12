@@ -6,6 +6,7 @@ use Illuminate\Auth\AuthManager;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use ResourceWizard\Console\Create;
 
 class ServiceProviderAbstract extends ServiceProvider
 {
@@ -17,10 +18,24 @@ class ServiceProviderAbstract extends ServiceProvider
         $this->mergeConfigFrom(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'config', 'resource-wizard.php']), 'resource-wizard');
         $this->publishes([implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'config', 'resource-wizard.php']) => config_path('resource-wizard.php')], 'resource-wizard');
 
+        $this->registerCommands();
+
         $this->registerMiddleware($router);
         $this->registerRoutes();
 
         return $this;
+    }
+
+    /**
+     * Register the console commands for the package.
+     */
+    protected function registerCommands(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Create::class,
+            ]);
+        }
     }
 
     final public function provides(): array
