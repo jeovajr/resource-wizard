@@ -9,7 +9,16 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use ResourceWizard\Console\Build;
 use ResourceWizard\Console\Create;
+use ResourceWizard\Events\EventAdd;
+use ResourceWizard\Events\EventBrowse;
+use ResourceWizard\Events\EventDelete;
+use ResourceWizard\Events\EventEdit;
+use ResourceWizard\Events\EventLock;
+use ResourceWizard\Events\EventRead;
+use ResourceWizard\Events\EventUnlock;
 use ResourceWizard\Facade\ResourceWizard;
+use ResourceWizard\Models\ResourceModel;
+use ResourceWizard\Requests\FormRequest;
 use ResourceWizard\Services\ResourceWizard as ResourceWizardService;
 
 class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvider
@@ -48,6 +57,15 @@ class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvi
         return [
             ResourceWizardService::class,
             ResourceWizard::class,
+            ResourceModel::class,
+            EventBrowse::class,
+            EventRead::class,
+            EventEdit::class,
+            EventAdd::class,
+            EventDelete::class,
+            EventLock::class,
+            EventUnlock::class,
+            FormRequest::class,
         ];
     }
 
