@@ -57,7 +57,10 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "ResourceWizard\\": "src"
+      "ResourceWizard\\Models\\": "src/Models",
+      "ResourceWizard\\Events\\": "src/Events",
+      "ResourceWizard\\Requests\\": "src/Requests"  ,
+      "ResourceWizard\\": "src/"
     },
     "files": [
       "src/helpers.php"
