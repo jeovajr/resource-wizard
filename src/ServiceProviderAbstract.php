@@ -4,11 +4,14 @@ namespace ResourceWizard;
 
 use Illuminate\Auth\AuthManager;
 use Illuminate\Contracts\Auth\Access\Gate;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use ResourceWizard\Console\Create;
+use ResourceWizard\Facade\ResourceWizard;
+use ResourceWizard\Services\ResourceWizard as ResourceWizardService;
 
-class ServiceProviderAbstract extends ServiceProvider
+class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvider
 {
     final public function boot(
         Router $router,
@@ -41,13 +44,18 @@ class ServiceProviderAbstract extends ServiceProvider
     final public function provides(): array
     {
         return [
-
+            ResourceWizardService::class,
+            ResourceWizard::class,
         ];
     }
 
     final public function register(): self
     {
         $this->registerGuards();
+
+        $this->app->singleton(ResourceWizard::class, fn () => new ResourceWizardService());
+
+        $this->app->singleton('resource-wizard', static fn () => app(ResourceWizard::class));
 
         return $this;
     }

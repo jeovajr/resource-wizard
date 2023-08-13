@@ -21,7 +21,7 @@ return [
             'model_filterable' => true,
             'model_sortable' => true,
             'request_validation' => 'required|string|max:255',
-            'resource_name' => __('Sample Column'),
+            'resource_name' => 'Sample Column',
         ]
     ],
     'primary_key' => 'id',
