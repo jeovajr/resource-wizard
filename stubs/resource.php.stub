@@ -20,13 +20,27 @@ return [
             'model_searchable' => true,
             'model_filterable' => true,
             'model_sortable' => true,
-            'request_validation' => 'required|string|max:255',
+            'request_validation' => [
+                'store' => 'required|string|max:255',
+                'update' => 'required|string|max:255',
+                'messages' => [
+                    'required' => 'The :sample_column field is required.',
+                    'string' => 'The :sample_column field must be a string.',
+                    'max' => 'The :sample_column field must not exceed 255 characters.',
+                ]
+            ],
             'resource_name' => 'Sample Column',
         ]
     ],
+    'append' => [
+
+    ],
     'primary_key' => 'id',
+    'key_type' => 'int',
+    'incrementing' => true,
     'default_order_by' => 'id',
     'default_order_direction' => 'asc',
+    'soft_delete' => true,
     'cache' => [
         'item' => [
             'enabled' => true,

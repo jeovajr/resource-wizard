@@ -49,9 +49,11 @@ trait Replacer
         return $keys;
     }
 
-    private function getSearchValues(string $singular, string $plural): array
+    private function getSearchValues(string $name): array
     {
         $keys = [];
+        $singular = Str::singular($name);
+        $plural = Str::plural($name);
         foreach ($this->searchKeys as $key) {
             $keys[] = match ($key) {
                 'Camel' => Str::camel($singular),

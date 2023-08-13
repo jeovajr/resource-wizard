@@ -43,9 +43,7 @@ class Create extends Command
      */
     private static int $steps = 1;
 
-    private string $singular;
-
-    private string $plural;
+    private string $resourceName;
 
     /**
      * The name and signature of the console command.
@@ -72,8 +70,7 @@ class Create extends Command
 
         $this->composer = $composer;
         $this->files = $files;
-        $this->singular = '';
-        $this->plural = '';
+        $this->resourceName = '';
     }
 
     /**
@@ -84,11 +81,10 @@ class Create extends Command
     public function handle(): void
     {
         $generated_files = [];
-        $progressBar = $this->output->createProgressBar(Create::$steps); // 25 steps
-        $this->singular = Str::singular(Str::headline($this->argument('name')));
-        $this->plural = Str::plural(Str::headline($this->argument('name')));
+        $progressBar = $this->output->createProgressBar(self::$steps); // 1 step
+        $this->resourceName = Str::singular(Str::headline(is_string($this->argument('name')) ? $this->argument('name') : ''));
 
-        $this->info('Starting to create new resource ['.$this->singular.']');
+        $this->info('Starting to create new resource ['.$this->resourceName.']');
         $this->line('');
         $progressBar->start();
         $this->info(' -> Generating resource file...');
@@ -100,7 +96,7 @@ class Create extends Command
         if (! $this->files->exists($resourcesPath)) {
             $this->files->makeDirectory($resourcesPath, 0755, true, true);
         }
-        $generated_files['resource'] = $this->generateFile('resource.php', $resourcesPath, Str::kebab($this->singular).'.php');
+        $generated_files['resource'] = $this->generateFile('resource.php', $resourcesPath, Str::kebab($this->resourceName).'.php');
         $progressBar->finish();
         $this->info(' -> New resource registered!');
 
@@ -147,7 +143,7 @@ class Create extends Command
     {
         $stub = $this->files->get($this->stubPath().DIRECTORY_SEPARATOR.$file.'.stub');
 
-        return str_replace($this->getSearchKeys(), $this->getSearchValues($this->singular, $this->plural), $stub);
+        return str_replace($this->getSearchKeys(), $this->getSearchValues($this->resourceName), $stub);
     }
 
     /**

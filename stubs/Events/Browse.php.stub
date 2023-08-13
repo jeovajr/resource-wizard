@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace ResourceWizard\Events\Resources\DummyUP;
+namespace App\Events\ResourceWizard\DummyStudlyP;
 
 use ResourceWizard\Events\EventBrowse;
 
 /**
- * EventBrowse general class.
+ * Event DummyStudlyPBrowse.
  * Broadcast events via broadcast driver.
  *
  * @author        Jeova Goncalves <jeova.goncalves1@gmail.com>
  * @copyright (c) 2023, Jeova Goncalves.
  */
-class DummyUPBrowse extends EventBrowse {
+class DummyStudlyPBrowse extends EventBrowse {
 
     /**
      * Create a new event instance.
@@ -24,7 +24,7 @@ class DummyUPBrowse extends EventBrowse {
      * @return void
      */
     public function __construct(array $requester, string $account) {
-        parent::__construct("DummyLP", $requester, $account);
+        parent::__construct("DummySlugP", $requester, $account);
     }
 
 }

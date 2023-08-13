@@ -24,6 +24,7 @@
   "require": {
     "php": "^8.2",
     "ext-json": "*",
+    "doctrine/dbal": "^3.6",
     "illuminate/broadcasting": "*",
     "illuminate/contracts": "^10",
     "illuminate/http": "^10",
