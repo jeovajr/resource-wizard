@@ -217,7 +217,12 @@ class Build extends Command
      */
     private function getFactoriesBasePath(): string
     {
-        return $this->laravel->databasePath().DIRECTORY_SEPARATOR.'factories'.DIRECTORY_SEPARATOR.'ResourceWizard';
+        $path = $this->laravel->databasePath().DIRECTORY_SEPARATOR.'factories'.DIRECTORY_SEPARATOR.'ResourceWizard';
+        if (! $this->files->exists($path)) {
+            $this->files->makeDirectory($path, 0755, true, true);
+        }
+
+        return $path;
     }
 
     /**
@@ -233,7 +238,12 @@ class Build extends Command
      */
     private function getModelsBasePath(): string
     {
-        return $this->laravel->basePath().DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'Models'.DIRECTORY_SEPARATOR.'ResourceWizard';
+        $path = $this->laravel->basePath().DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'Models'.DIRECTORY_SEPARATOR.'ResourceWizard';
+        if (! $this->files->exists($path)) {
+            $this->files->makeDirectory($path, 0755, true, true);
+        }
+
+        return $path;
     }
 
     /**
@@ -249,7 +259,12 @@ class Build extends Command
      */
     private function getRequestsBasePath(): string
     {
-        return $this->laravel->basePath().DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'Http'.DIRECTORY_SEPARATOR.'Requests'.DIRECTORY_SEPARATOR.'ResourceWizard';
+        $path = $this->laravel->basePath().DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'Http'.DIRECTORY_SEPARATOR.'Requests'.DIRECTORY_SEPARATOR.'ResourceWizard';
+        if (! $this->files->exists($path)) {
+            $this->files->makeDirectory($path, 0755, true, true);
+        }
+
+        return $path;
     }
 
     /**
