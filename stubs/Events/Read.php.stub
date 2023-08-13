@@ -20,13 +20,12 @@ class DummyStudlySRead extends EventRead {
      * Create a new event instance.
      *
      * @param DummyStudlyS $DummyCamelS
-     * @param string $account The event account
      * @param array{id: int|string, name: string} $requester The user that requested the resource
      *
      * @return void
      */
-    public function __construct(DummyStudlyS $DummyCamelS, string $account, array $requester) {
-        parent::__construct("DummySlugP", $DummyCamelS, $account, $requester);
+    public function __construct(DummyStudlyS $DummyCamelS, array $requester) {
+        parent::__construct("DummySlugP", $DummyCamelS, $requester);
     }
 
 }

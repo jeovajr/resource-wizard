@@ -21,12 +21,11 @@ abstract class EventBrowse extends Event
      * Create a new event instance.
      *
      * @param  array{id: int|string, name: string}  $requester
-     * @param  string  $account The event account
      * @return void
      */
-    public function __construct(string $name, array $requester, string $account)
+    public function __construct(string $name, array $requester)
     {
-        parent::__construct($name, null, $account);
+        parent::__construct($name);
         $this->requester = $requester;
     }
 
@@ -38,7 +37,7 @@ abstract class EventBrowse extends Event
     public function broadcastOn(): array
     {
         return [
-            new PresenceChannel(parent::getAccount().'.resource.'.parent::getName().'.b'),
+            new PresenceChannel('wizard.resource.'.parent::getName().'.b'),
         ];
     }
 

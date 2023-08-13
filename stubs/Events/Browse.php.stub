@@ -19,12 +19,10 @@ class DummyStudlyPBrowse extends EventBrowse {
      * Create a new event instance.
      *
      * @param array{id: int|string, name: string}   $requester
-     * @param string $account The event account
-     *
      * @return void
      */
-    public function __construct(array $requester, string $account) {
-        parent::__construct("DummySlugP", $requester, $account);
+    public function __construct(array $requester) {
+        parent::__construct("DummySlugP", $requester);
     }
 
 }

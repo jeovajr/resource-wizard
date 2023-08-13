@@ -23,8 +23,8 @@ abstract class EventAdd extends Event
     public function broadcastOn(): array
     {
         return [
-            new PresenceChannel(parent::getAccount().'.resource.'.parent::getName().'.m'),
-            new PresenceChannel(parent::getAccount().'.resource.'.parent::getName().'.b'),
+            new PresenceChannel('wizard.resource.'.parent::getName().'.m'),
+            new PresenceChannel('wizard.resource.'.parent::getName().'.b'),
         ];
     }
 

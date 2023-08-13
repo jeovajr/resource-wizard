@@ -20,12 +20,13 @@ abstract class EventRead extends Event
     /**
      * Create a new event instance.
      *
-     * @param  string  $account The event account
+     * @param  string  $name      The resource name
+     * @param  mixed  $object    The resource object
      * @param  array{id: int|string, name: string}  $requester The user that requested the resource
      */
-    public function __construct(string $name, mixed $object, string $account, array $requester)
+    public function __construct(string $name, mixed $object, array $requester)
     {
-        parent::__construct($name, $object, $account);
+        parent::__construct($name, $object);
         $this->requester = $requester;
     }
 
@@ -38,7 +39,7 @@ abstract class EventRead extends Event
     {
         if (is_object($this->object) && isset($this->object->id)) {
             return [
-                new PresenceChannel(parent::getAccount().'.resource.'.parent::getName().'.r'.$this->object->id),
+                new PresenceChannel('wizard.resource.'.parent::getName().'.r'.$this->object->id),
             ];
         }
 

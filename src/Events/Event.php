@@ -23,21 +23,17 @@ abstract class Event implements ShouldBroadcast
 
     public mixed $object;
 
-    private string $account;
-
     private string $name;
 
     /**
      * Create a new event instance.
      *
      * @param  mixed  $object
-     * @param  string  $account The event account
      */
-    public function __construct(string $name, mixed $object = null, string $account = 'default')
+    public function __construct(string $name, mixed $object = null)
     {
         $this->name = $name;
         $this->object = $object;
-        $this->account = $account;
     }
 
     /**
@@ -49,17 +45,17 @@ abstract class Event implements ShouldBroadcast
     {
         if (is_object($this->object) && isset($this->object->id)) {
             return [
-                new PresenceChannel($this->account.'.resource.'.$this->name.'.m'),
-                new PresenceChannel($this->account.'.resource.'.$this->name.'.b'),
-                new PresenceChannel($this->account.'.resource.'.$this->name.'.r'.$this->object->id),
-                new PresenceChannel($this->account.'.resource.'.$this->name.'.e'.$this->object->id),
-                new PresenceChannel($this->account.'.resource.'.$this->name.'.d'.$this->object->id),
+                new PresenceChannel('wizard.resource.'.$this->name.'.m'),
+                new PresenceChannel('wizard.resource.'.$this->name.'.b'),
+                new PresenceChannel('wizard.resource.'.$this->name.'.r'.$this->object->id),
+                new PresenceChannel('wizard.resource.'.$this->name.'.e'.$this->object->id),
+                new PresenceChannel('wizard.resource.'.$this->name.'.d'.$this->object->id),
             ];
         }
 
         return [
-            new PresenceChannel($this->account.'.resource.'.$this->name.'.m'),
-            new PresenceChannel($this->account.'.resource.'.$this->name.'.b'),
+            new PresenceChannel('.resource.'.$this->name.'.m'),
+            new PresenceChannel('.resource.'.$this->name.'.b'),
         ];
     }
 
@@ -77,13 +73,5 @@ abstract class Event implements ShouldBroadcast
     public function getName(): string
     {
         return $this->name;
-    }
-
-    /**
-     * Get the account
-     */
-    public function getAccount(): string
-    {
-        return $this->account;
     }
 }

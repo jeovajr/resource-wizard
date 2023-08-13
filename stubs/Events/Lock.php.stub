@@ -21,12 +21,10 @@ class DummyStudlySLock extends EventLock {
      * Create a new event instance.
      *
      * @param DummyStudlyS $DummyCamelS
-     * @param string  $account The event account
-     *
      * @return void
      */
-    public function __construct(DummyStudlyS $DummyCamelS, string $account) {
-        parent::__construct("DummySlugP", $DummyCamelS, $account);
+    public function __construct(DummyStudlyS $DummyCamelS) {
+        parent::__construct("DummySlugP", $DummyCamelS);
     }
 
 }
