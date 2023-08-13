@@ -1,13 +1,13 @@
 <?php
 
-use ResourceWizard\Services\ResourceWizard;
+use ResourceWizard\Services\Wizard;
 
 if (! function_exists('wizard')) {
     /**
      * Access the container resource wizard.
      */
-    function wizard(): ResourceWizard
+    function wizard(): Wizard
     {
-        return app('resource-wizard');
+        return app('wizard');
     }
 }

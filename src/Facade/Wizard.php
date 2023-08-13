@@ -6,10 +6,10 @@ namespace ResourceWizard\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
-final class ResourceWizard extends Facade
+final class Wizard extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'resource-wizard';
+        return 'wizard';
     }
 }

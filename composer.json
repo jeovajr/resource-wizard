@@ -82,7 +82,7 @@
   "extra": {
     "laravel": {
       "aliases": {
-        "ResourceWizard": "ResourceWizard\\Facade\\ResourceWizard"
+        "Wizard": "Wizard"
       },
       "providers": [
         "ResourceWizard\\ServiceProvider"

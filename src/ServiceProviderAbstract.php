@@ -16,10 +16,10 @@ use ResourceWizard\Events\EventEdit;
 use ResourceWizard\Events\EventLock;
 use ResourceWizard\Events\EventRead;
 use ResourceWizard\Events\EventUnlock;
-use ResourceWizard\Facade\ResourceWizard;
+use ResourceWizard\Facade\Wizard;
 use ResourceWizard\Models\ResourceModel;
 use ResourceWizard\Requests\FormRequest;
-use ResourceWizard\Services\ResourceWizard as ResourceWizardService;
+use ResourceWizard\Services\Wizard as WizardService;
 
 class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvider
 {
@@ -55,8 +55,8 @@ class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvi
     final public function provides(): array
     {
         return [
-            ResourceWizardService::class,
-            ResourceWizard::class,
+            WizardService::class,
+            Wizard::class,
             ResourceModel::class,
             EventBrowse::class,
             EventRead::class,
@@ -73,9 +73,9 @@ class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvi
     {
         $this->registerGuards();
 
-        $this->app->singleton(ResourceWizard::class, fn () => new ResourceWizardService());
+        $this->app->singleton(Wizard::class, fn () => new WizardService());
 
-        $this->app->singleton('resource-wizard', static fn () => app(ResourceWizard::class));
+        $this->app->singleton('wizard', static fn () => app(Wizard::class));
 
         return $this;
     }

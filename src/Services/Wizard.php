@@ -2,7 +2,7 @@
 
 namespace ResourceWizard\Services;
 
-class ResourceWizard
+class Wizard
 {
     private array $resources;
 
