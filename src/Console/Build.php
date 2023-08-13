@@ -321,7 +321,7 @@ class Build extends Command
      */
     private function getEventsPath(string $name): string
     {
-        $path = $this->getBaseEventsPath().DIRECTORY_SEPARATOR.Str::singular(Str::studly($name));
+        $path = $this->getBaseEventsPath().DIRECTORY_SEPARATOR.Str::plural(Str::studly($name));
         if (! $this->files->exists($path)) {
             $this->files->makeDirectory($path, 0755, true, true);
         }
