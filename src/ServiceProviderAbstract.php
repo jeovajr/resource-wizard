@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use ResourceWizard\Console\Build;
 use ResourceWizard\Console\Create;
 use ResourceWizard\Facade\ResourceWizard;
 use ResourceWizard\Services\ResourceWizard as ResourceWizardService;
@@ -37,6 +38,7 @@ class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvi
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Create::class,
+                Build::class,
             ]);
         }
     }
