@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="ResourceWizard\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="ResourceWizard\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Events" isTestSource="false" packagePrefix="ResourceWizard\Events\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Models" isTestSource="false" packagePrefix="ResourceWizard\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Requests" isTestSource="false" packagePrefix="ResourceWizard\Requests\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />

@@ -59,6 +59,15 @@
     "psr-4": {
       "ResourceWizard\\": [
         "src/"
+      ],
+      "ResourceWizard\\Models\\": [
+        "src/Models/"
+      ],
+      "ResourceWizard\\Requests\\": [
+        "src/Requests/"
+      ],
+      "ResourceWizard\\Events\\": [
+        "src/Events/"
       ]
     },
     "files": [
