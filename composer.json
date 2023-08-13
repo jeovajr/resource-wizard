@@ -57,9 +57,7 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "ResourceWizard\\": [
-        "src/"
-      ]
+      "ResourceWizard\\": "src"
     },
     "files": [
       "src/helpers.php"
@@ -84,7 +82,7 @@
   "extra": {
     "laravel": {
       "aliases": {
-        "Auth0": "ResourceWizard\\Facade\\ResourceWizard"
+        "ResourceWizard": "ResourceWizard\\Facade\\ResourceWizard"
       },
       "providers": [
         "ResourceWizard\\ServiceProvider"
