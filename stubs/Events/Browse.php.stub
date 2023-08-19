@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Events\ResourceWizard\DummyStudlyP;
 
-use ResourceWizard\Events\EventBrowse;
+use Jeovajr\ResourceWizard\Events\EventBrowse;
 
 /**
  * Event DummyStudlyPBrowse.

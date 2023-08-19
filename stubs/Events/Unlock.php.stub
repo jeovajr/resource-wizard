@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Events\ResourceWizard\DummyStudlyP;
 
-use ResourceWizard\Events\EventUnlock;
+use Jeovajr\ResourceWizard\Events\EventUnlock;
 use App\Models\ResourceWizard\DummyStudlyS;
 
 /**
