@@ -1,6 +1,6 @@
 <?php
 
-use ResourceWizard\Services\Wizard;
+use Jeovajr\ResourceWizard\Services\Wizard;
 
 if (! function_exists('wizard')) {
     /**

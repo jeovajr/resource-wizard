@@ -1,6 +1,6 @@
 <?php
 
-namespace ResourceWizard\Console;
+namespace Jeovajr\ResourceWizard\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;

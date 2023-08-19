@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ResourceWizard\Facades;
+namespace Jeovajr\ResourceWizard\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ResourceWizard;
+namespace Jeovajr\ResourceWizard;
 
 use Illuminate\Routing\Router;
 

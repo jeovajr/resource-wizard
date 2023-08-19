@@ -57,7 +57,7 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "ResourceWizard\\": "src/ResourceWizard/"
+      "Jeovajr\\ResourceWizard\\": "src/ResourceWizard/"
     },
     "files": [
       "src/ResourceWizard/helpers.php"
@@ -65,7 +65,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "ResourceWizard\\Tests\\": "tests/"
+      "Jeovajr\\ResourceWizard\\Tests\\": "tests/"
     }
   },
   "config": {
@@ -85,7 +85,7 @@
         "Wizard": "Wizard"
       },
       "providers": [
-        "ResourceWizard\\ServiceProvider"
+        "Jeovajr\\ResourceWizard\\ServiceProvider"
       ]
     },
     "merge-plugin": {

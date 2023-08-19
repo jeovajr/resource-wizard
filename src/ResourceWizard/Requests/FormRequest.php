@@ -1,6 +1,6 @@
 <?php
 
-namespace ResourceWizard\Requests;
+namespace Jeovajr\ResourceWizard\Requests;
 
 use Illuminate\Foundation\Http\FormRequest as IlluminateFormRequest;
 

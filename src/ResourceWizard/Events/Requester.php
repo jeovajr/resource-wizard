@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ResourceWizard\Events;
+namespace Jeovajr\ResourceWizard\Events;
 
 trait Requester
 {
