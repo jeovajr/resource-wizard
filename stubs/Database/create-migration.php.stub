@@ -34,7 +34,7 @@ class CreateDummyStudlyPTable extends Migration {
                  * Resource General Columns Section                                *
                  ******************************************************************/
                 // ID
-                $table->id()->first();
+                $table->id();
                 // Timestamps
                 $table->timestampsTz();
                 // SoftDeletes
@@ -43,20 +43,20 @@ class CreateDummyStudlyPTable extends Migration {
                 $table->addColumn('bigInteger', 'created_by', [
                     'autoIncrement' => false,
                     'unsigned' => true
-                ])->nullable()->after('created_at');
+                ])->nullable();
                 $table->foreign('created_by', 'DummySnakeP_created_by_fk')->references('id')->on('users');
                 // Updating Logs
                 $table->addColumn('bigInteger', 'updated_by', [
                     'autoIncrement' => false,
                     'unsigned' => true
-                ])->nullable()->after('updated_at');
+                ])->nullable();
                 $table->foreign('updated_by', 'DummySnakeP_updated_by_fk')->references('id')->on('users');
                 // Lock Control
-                $table->timestampTz('locked_at')->nullable()->after('updated_by');
+                $table->timestampTz('locked_at')->nullable();
                 $table->addColumn('bigInteger', 'locked_by', [
                     'autoIncrement' => false,
                     'unsigned' => true
-                ])->nullable()->after('locked_at');
+                ])->nullable();
                 $table->foreign('locked_by', 'DummySnakeP_locked_by_fk')->references('id')->on('users');
 
                 /*******************************************************************
