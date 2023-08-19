@@ -16,7 +16,7 @@ use ResourceWizard\Events\EventEdit;
 use ResourceWizard\Events\EventLock;
 use ResourceWizard\Events\EventRead;
 use ResourceWizard\Events\EventUnlock;
-use ResourceWizard\Facade\Wizard;
+use ResourceWizard\Facades\Wizard;
 use ResourceWizard\Models\ResourceModel;
 use ResourceWizard\Requests\FormRequest;
 use ResourceWizard\Services\Wizard as WizardService;
@@ -28,8 +28,8 @@ class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvi
         AuthManager $auth,
         Gate $gate,
     ): self {
-        $this->mergeConfigFrom(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'config', 'resource-wizard.php']), 'resource-wizard');
-        $this->publishes([implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'config', 'resource-wizard.php']) => config_path('resource-wizard.php')], 'resource-wizard');
+        $this->mergeConfigFrom(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', 'config', 'resource-wizard.php']), 'resource-wizard');
+        $this->publishes([implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', 'config', 'resource-wizard.php']) => config_path('resource-wizard.php')], 'resource-wizard');
 
         $this->registerCommands();
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ResourceWizard\Facade;
+namespace ResourceWizard\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
