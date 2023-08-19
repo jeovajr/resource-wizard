@@ -1,6 +1,6 @@
 <?php
 
-namespace Jeovajr\ResourceWizard\Services;
+namespace ResourceWizard\Services;
 
 class Wizard
 {

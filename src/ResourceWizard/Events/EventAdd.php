@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jeovajr\ResourceWizard\Events;
+namespace ResourceWizard\Events;
 
 use Illuminate\Broadcasting\PresenceChannel;
 

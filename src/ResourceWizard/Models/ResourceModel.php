@@ -1,6 +1,6 @@
 <?php
 
-namespace Jeovajr\ResourceWizard\Models;
+namespace ResourceWizard\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 

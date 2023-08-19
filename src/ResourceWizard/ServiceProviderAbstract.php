@@ -1,25 +1,25 @@
 <?php
 
-namespace Jeovajr\ResourceWizard;
+namespace ResourceWizard;
 
 use Illuminate\Auth\AuthManager;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use Jeovajr\ResourceWizard\Console\Build;
-use Jeovajr\ResourceWizard\Console\Create;
-use Jeovajr\ResourceWizard\Events\EventAdd;
-use Jeovajr\ResourceWizard\Events\EventBrowse;
-use Jeovajr\ResourceWizard\Events\EventDelete;
-use Jeovajr\ResourceWizard\Events\EventEdit;
-use Jeovajr\ResourceWizard\Events\EventLock;
-use Jeovajr\ResourceWizard\Events\EventRead;
-use Jeovajr\ResourceWizard\Events\EventUnlock;
-use Jeovajr\ResourceWizard\Facades\Wizard;
-use Jeovajr\ResourceWizard\Models\ResourceModel;
-use Jeovajr\ResourceWizard\Requests\FormRequest;
-use Jeovajr\ResourceWizard\Services\Wizard as WizardService;
+use ResourceWizard\Console\Build;
+use ResourceWizard\Console\Create;
+use ResourceWizard\Events\EventAdd;
+use ResourceWizard\Events\EventBrowse;
+use ResourceWizard\Events\EventDelete;
+use ResourceWizard\Events\EventEdit;
+use ResourceWizard\Events\EventLock;
+use ResourceWizard\Events\EventRead;
+use ResourceWizard\Events\EventUnlock;
+use ResourceWizard\Facades\Wizard;
+use ResourceWizard\Models\ResourceModel;
+use ResourceWizard\Requests\FormRequest;
+use ResourceWizard\Services\Wizard as WizardService;
 
 class ServiceProviderAbstract extends ServiceProvider implements DeferrableProvider
 {

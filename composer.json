@@ -6,7 +6,8 @@
   "keywords": [
     "laravel",
     "api",
-    "resource"
+    "resource",
+    "resource-wizard"
   ],
   "authors": [
     {
@@ -57,7 +58,7 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Jeovajr\\ResourceWizard\\": "src/ResourceWizard/"
+      "ResourceWizard\\": "src/ResourceWizard/"
     },
     "files": [
       "src/ResourceWizard/helpers.php"
@@ -65,7 +66,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Jeovajr\\ResourceWizard\\Tests\\": "tests/"
+      "ResourceWizard\\Tests\\": "tests/"
     }
   },
   "config": {
@@ -85,7 +86,7 @@
         "Wizard": "Wizard"
       },
       "providers": [
-        "Jeovajr\\ResourceWizard\\ServiceProvider"
+        "ResourceWizard\\ServiceProvider"
       ]
     },
     "merge-plugin": {
@@ -102,26 +103,10 @@
     }
   },
   "scripts": {
-    "post-autoload-dump": [
-      "@php vendor/bin/testbench package:discover --ansi"
-    ],
-    "pest:coverage": "@php vendor/bin/pest --coverage --parallel --no-progress",
-    "pest:debug": "@php vendor/bin/pest --fail-on-risky --stop-on-defect",
-    "pest:profile": "@php vendor/bin/pest --profile",
-    "pest": "@php vendor/bin/pest --order-by random --fail-on-risky --stop-on-defect --coverage --parallel --min=95",
-    "phpcs:fix": "@php vendor/bin/php-cs-fixer fix",
-    "phpcs": "@php vendor/bin/php-cs-fixer fix --dry-run --diff",
     "phpstan": "@php vendor/bin/phpstan analyze",
-    "psalm:fix": "@php vendor/bin/psalter --issues=all",
-    "psalm": "@php vendor/bin/psalm",
-    "rector:fix": "@php vendor/bin/rector process src",
-    "rector": "@php vendor/bin/rector process src --dry-run",
+    "pint": "@php vendor/bin/pint",
     "test": [
-      "@pest",
-      "@phpstan",
-      "@psalm",
-      "@rector",
-      "@phpcs"
+      "@phpstan"
     ]
   }
 }
